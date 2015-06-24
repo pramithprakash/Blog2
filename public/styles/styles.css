@@ -336,7 +336,6 @@ div#header:hover div#page-curl{
 /*--SEARCH--*/
 
 div#search{
-	height:0;
 	overflow:hidden;
 	background:#D95353;
 	

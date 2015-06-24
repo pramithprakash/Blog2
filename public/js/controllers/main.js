@@ -27,7 +27,7 @@ angular.module('blogController', [])
 		}
 
 		$scope.filterTag = function( tag ){
-			$scope.searchText = tag;
+			$scope.tagFilter = tag;
 			$scope.limit = 3;
 		};
 

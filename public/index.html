@@ -24,17 +24,21 @@
 	        <h1 id="title-top" style="">POST <span ng-if="blogs.length>0">{{ blogs.length }}</span> <a ng-click="filterTag('ALL')" rel="category tag">ALL</a></h1>
 	    </div><!--CONTENT-->
 	</div><!--HEADER-->
-
+	<div id="search">
+		<form id="searchform">
+			<input type="text" ng-model="searchText" placeholder="Search..." name="s" id="s"><a class="clearinput" href="javascript:void(0);" onclick="javascript:clearinput();">╳</a>
+		</form>
+	</div>
 	<div id="body">
 	  <div class="content">
 	  <div class="la-square-spin la-dark la-lg" ng-show="loading">
 	    <div></div>
 	 </div>
-	 	<div class="navigation" ng-show="blogs.length === 0">
+	 	<div class="navigation" ng-show="filteredBlogs.length === 0 ">
         	NO POST
        	</div>
 
-	    <div id="posts-{{$index}}" ng-repeat="blog in filteredBlogs = (blogs | filter:searchText) | limitTo:limit track by $index">
+	    <div id="posts-{{$index}}" ng-repeat="blog in filteredBlogs = (blogs | filter:tagFilter | filter:searchText) | limitTo:limit track by $index">
 	        <div class="post">
 	           <h4 class="post-date">{{blog.date}}</h4>
 	           <h3 class="post-title" style="position:relative"><a><div class="slab">"{{ blog.title }}" <span style="cursor:pointer;position:absolute;right:-55px;font-size:10px;" ng-click="deleteBlog(blog._id)">DELETE</span></div></a></h3>
