@@ -942,6 +942,9 @@ div#no-results h2{
 div#no-results h2 span{
 	color:#ff6666;
 }
+div#no-results a{
+	cursor: pointer;
+}
 div#no-results p{
 	font-size:1.5em;
 	line-height:1.25em;

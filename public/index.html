@@ -35,7 +35,7 @@
 	 </div>
 	 	<div id="no-results" ng-show="filteredBlogs.length === 0 ">
     	<h2><span>No</span> Results.</h2>
-        <p>Try clearing the filters. Thanks</p>
+        <p>Try clearing the filters. <a ng-click="clearSearch()">Clear Filters</a> Thanks</p>
 	</div>
 
 	    <div id="posts-{{$index}}" ng-repeat="blog in filteredBlogs = (blogs | filter:tagFilter | filter:searchText) | limitTo:limit track by $index">
