@@ -8,7 +8,6 @@ var showdown  = require('showdown'),
    
 Blog.createIndex( { orderDate: -1 } )
 
-
 function getBlogs(res){
 
 	Blog.find().sort({date:-1}, function(err, blogs) {
