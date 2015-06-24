@@ -545,6 +545,7 @@ div#body div.post .the-categories ul li:first-child:before, div#body div.post .t
 	color:#cccccc;
 }
 div#body div.post .the-categories ul li a{
+	cursor: pointer;
 }
 div#body h3.post-title{
 	text-align:center;
@@ -718,7 +719,7 @@ div#body div.navigation a{
 	font-size:2em;
 	padding:1em 2%;
 	color:#222222;
-	
+	cursor: pointer;	
 	display:inline-block;
 	*display:inline;
 	zoom:1;
@@ -983,6 +984,7 @@ button{
   border-radius: 0;
   text-align: left;
   color: white;
+  cursor: pointer;
   background: #4472B9;
   white-space: nowrap;
   padding: 9px 16px !important;
@@ -991,6 +993,10 @@ button{
   position: relative;
   -webkit-transition: 0.1s;
   transition: 0.1s;
+}
+button:disabled{
+	cursor: default;
+	background: #999;
 }
 .la-square-spin {
     position: relative;
@@ -1106,6 +1112,7 @@ pre {
 	background: #D95353;
 	padding: 3px 8px 3px 6px;
 	display: inline-block;
+	cursor: pointer;
 }
 .delete-post{
 	cursor:pointer;position:absolute;right:-55px;font-size:10px;top:0;

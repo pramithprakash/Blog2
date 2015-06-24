@@ -73,7 +73,7 @@
 					</div>
 
 					<!--  WILL CREATE NEW BLOGS -->
-					<button type="submit" class="btn btn-primary btn-lg" ng-click="createBlog()">Add</button>
+					<button type="submit" class="btn btn-primary btn-lg" ng-disabled="blogData.title === '' || blogData.title === undefined" ng-click="createBlog()">Add</button>
 				</form>
 			</div>
 		</div>
