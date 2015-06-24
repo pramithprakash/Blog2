@@ -1,0 +1,98 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="pramithBlog">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Node/Angular Blog App</title>
+	<link rel="stylesheet" href="styles/styles.css">
+
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+ 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-sanitize.js"></script>
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/services/blogs.js"></script> <!-- load our blog service -->
+	<script src="js/core.js"></script> <!-- load our main application -->
+
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<div class="container" id="wrapper">
+
+	<div id="header">
+	    <div id="page-curl"></div>
+	    <div class="content">
+	        <h1 id="title-top" style="">POST <span ng-if="blogs.length>0">{{ blogs.length }}</span> <a ng-click="filterTag('ALL')" rel="category tag">ALL</a></h1>
+	    </div><!--CONTENT-->
+	</div><!--HEADER-->
+
+	<div id="body">
+	  <div class="content">
+	  <div class="la-square-spin la-dark la-lg" ng-show="loading">
+	    <div></div>
+	 </div>
+	 	<div class="navigation" ng-show="blogs.length === 0">
+        	NO POST
+       	</div>
+
+	    <div id="posts-{{$index}}" ng-repeat="blog in filteredBlogs = (blogs | filter:searchText) | limitTo:limit track by $index">
+	        <div class="post">
+	           <h4 class="post-date">{{blog.date}}</h4>
+	           <h3 class="post-title" style="position:relative"><a><div class="slab">"{{ blog.title }}" <span style="cursor:pointer;position:absolute;right:-55px;font-size:10px;" ng-click="deleteBlog(blog._id)">DELETE</span></div></a></h3>
+	           <div class="excerpt"><p ng-bind-html="blog.description"></p>
+	           </div>
+	           <div class="the-categories">
+	           <ul class="post-categories" ng-if="blog.tags">
+	               <li ng-repeat="t in blog.tags track by $index" ng-if="t!=='ALL'"><a ng-click="filterTag(t)" rel="category tag">{{t}}</a></li>
+	             </ul>
+	           </div>
+	        </div><!--POST-->
+	    </div><!--POSTS-->
+	    <div class="navigation" ng-show="filteredBlogs.length > limit">
+        	<a ng-click="limit = limit+3">+</a>
+       	</div>
+	  </div><!--CONTENT-->
+	</div><!--BODY-->
+
+	<!-- FORM TO CREATE BLOG -->
+		<div id="blog-form" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<form>
+					<div class="form-group">
+
+						<!-- BIND THIS VALUE TO blogData.text IN ANGULAR -->
+						<input type="text" class="form-control input-lg text-center" placeholder="TITLE" ng-model="blogData.title">
+
+						<textarea class="form-control input-lg text-center" placeholder="DESCRIPTION" ng-model="blogData.description">
+							
+						</textarea>
+						<input class="form-control input-lg text-center" ng-model="tags" />
+					</div>
+
+					<!--  WILL CREATE NEW BLOGS -->
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createBlog()">Add</button>
+				</form>
+			</div>
+		</div>
+
+	<div id="footer">
+	    <div class="content">
+	        <p><a href="#" target="_self"><strong> POST </strong></a> has been designed <strong> &amp;</strong> developed by <a href="#" target="_blank"><strong>pramithprakash</strong></a>@ pramithprakash.com &copy; 2015</p>
+	    </div><!--CONTENT-->
+	</div><!--FOOTER-->
+
+
+	</div>
+
+
+		
+
+	</div>
+
+</body>
+</html>

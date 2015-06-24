@@ -1,0 +1,15 @@
+{
+  "name": "blog",
+  "version": "0.0.0",
+  "description": "Simple blog",
+  "main": "server.js",
+  "author": "pramithprakash",
+  "dependencies": {
+    "body-parser": "~1.4.3",
+    "express": "~4.6.1",
+    "method-override": "~2.1.1",
+    "mongojs": "^1.0.1",
+    "morgan": "~1.1.1",
+    "showdown": "^1.1.0"
+  }
+}
