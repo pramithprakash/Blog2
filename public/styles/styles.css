@@ -28,11 +28,6 @@ body{
 	line-height:18px;
 	background-color:#333333;
 }
-@media screen and (max-width:800px){
-	body{
-		background-color:#ff6666;
-	}
-}
 a{
 	text-decoration:none;
 	color:#F66;
@@ -245,9 +240,9 @@ iframe{
 /*--WRAPPER--*/
 
 div#wrapper{
-	width:800px;
+	width:96%;
+	margin:30px 2%;
 	max-width:100%;
-	margin:30px;
 	overflow:hidden;
 	
 	box-shadow:1em 1em 0 rgba(0,0,0,.25);
@@ -555,6 +550,7 @@ div#body h3.post-title{
 	text-align:center;
 	margin:0 auto;
 	font-size:2em;
+	position: relative;
 	line-height:1.35em;
 }
 div#body h3.post-title a{
@@ -773,9 +769,9 @@ div#body .note strong{
 	div#body div.insert .label{
 		left:0;
 	}
-	div#body div.post .excerpt, div#body div.post .the-categories{
+	/*div#body div.post .excerpt, div#body div.post .the-categories{
 		display:none;
-	}
+	}*/
 	div.meta{
 		margin-top:2em;
 	}
@@ -1110,4 +1106,15 @@ pre {
 	background: #D95353;
 	padding: 3px 8px 3px 6px;
 	display: inline-block;
+}
+.delete-post{
+	cursor:pointer;position:absolute;right:-55px;font-size:10px;top:0;
+}
+@media screen and (max-width:800px){
+	.delete-post{
+		right:0;top:-32px;
+	}
+	body{
+		background-color:#ff6666;
+	}
 }
