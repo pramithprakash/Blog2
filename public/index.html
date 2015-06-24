@@ -21,22 +21,22 @@
 	<div id="header">
 	    <div id="page-curl"></div>
 	    <div class="content">
-	        <h1 id="title-top" style="">POST <span ng-if="blogs.length>0">{{ blogs.length }}</span> <a ng-click="filterTag('ALL')" rel="category tag">ALL</a></h1>
+	        <h1 id="title-top" style="">POST <span ng-if="blogs.length>0">{{ blogs.length }}</span> <a  rel="category tag">ALL</a></h1>
+	        <a class="selected-tag" ng-if="tagFilter!=='ALL'" ng-click="filterTag('ALL')">{{tagFilter}} ╳</a>
 	    </div><!--CONTENT-->
 	</div><!--HEADER-->
-	<div id="search">
-		<form id="searchform">
-			<input type="text" ng-model="searchText" placeholder="Search..." name="s" id="s"><a class="clearinput" href="javascript:void(0);">╳</a>
-		</form>
-	</div>
+	<form id="search" ng-class="{ 'pristine' : searchText !== '' }">
+		<input type="text" autocomplete="off" ng-model="searchText" placeholder="Search..." name="s" id="s"><a ng-if="searchText !== ''" ng-click="clearSearch()" class="clearinput" href="javascript:void(0);">╳</a>
+	</form>
 	<div id="body">
 	  <div class="content">
 	  <div class="la-square-spin la-dark la-lg" ng-show="loading">
 	    <div></div>
 	 </div>
-	 	<div class="navigation" ng-show="filteredBlogs.length === 0 ">
-        	NO POST
-       	</div>
+	 	<div id="no-results" ng-show="filteredBlogs.length === 0 ">
+    	<h2><span>No</span> Results.</h2>
+        <p>Try clearing the filters. Thanks</p>
+	</div>
 
 	    <div id="posts-{{$index}}" ng-repeat="blog in filteredBlogs = (blogs | filter:tagFilter | filter:searchText) | limitTo:limit track by $index">
 	        <div class="post">
@@ -58,7 +58,7 @@
 	</div><!--BODY-->
 
 	<!-- FORM TO CREATE BLOG -->
-		<div id="blog-form" class="row">
+		<div id="blog-form" class="row" >
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<form>
 					<div class="form-group">

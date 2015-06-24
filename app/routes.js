@@ -11,12 +11,12 @@ Blog.createIndex( { orderDate: -1 } )
 
 function getBlogs(res){
 
-	Blog.find(function(err, blogs) {
+	Blog.find().sort({date:-1}, function(err, blogs) {
 
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
 				res.send(err)
-			blogs = blogs.reverse()
+			//blogs = blogs.reverse()
 			res.json(blogs); // return all blogs in JSON format
 		});
 };

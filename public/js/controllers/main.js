@@ -6,6 +6,8 @@ angular.module('blogController', [])
 		$scope.blogData = {};
 		$scope.loading = true;
 		$scope.limit = 3;
+		$scope.tagFilter = 'ALL';
+		$scope.searchText = '';
 		var tagArray = [];
 		var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 		var months =  ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -29,6 +31,10 @@ angular.module('blogController', [])
 		$scope.filterTag = function( tag ){
 			$scope.tagFilter = tag;
 			$scope.limit = 3;
+		};
+
+		$scope.clearSearch = function() {
+			$scope.searchText = '';
 		};
 
 		$scope.createBlog = function() {
