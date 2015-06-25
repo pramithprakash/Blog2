@@ -10,7 +10,7 @@ Blog.createIndex( { orderDate: -1 } )
 
 function getBlogs(res){
 
-	Blog.find().sort({date:-1}, function(err, blogs) {
+	Blog.find().sort({createdDate:-1}, function(err, blogs) {
 
 			// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 			if (err)
@@ -42,6 +42,7 @@ module.exports = function(app) {
 			title : req.body.title,
 			description : html,
 			date : req.body.date,
+			createdDate : req.body.createdDate,
 			tags : tags 
 		}, function(err, blog) {
 			if (err)

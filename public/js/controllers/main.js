@@ -44,7 +44,7 @@ angular.module('blogController', [])
 				$scope.loading = true;
 				var date = new Date();
 				taggingSplit();
-
+				$scope.blogData['createdDate'] = date;
 				$scope.blogData['date'] = days[date.getDay()] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear() + ' (' + date.getHours() + ':' + date.getMinutes() + ')';
 				$scope.blogData['tags'] = tagArray;
 
