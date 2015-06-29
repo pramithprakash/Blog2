@@ -1,5 +1,5 @@
 var mongojs = require('mongojs'); 					// mongojs for mongodb
-var database = require('../config/database'); 			// load the database config
+var database = require('../config/database'); 		// load the database config
 var ObjectId = mongojs.ObjectId;
 var db = mongojs(database.url);
 var Blog = db.collection('Blogs');
