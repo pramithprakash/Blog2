@@ -6,6 +6,7 @@ var morgan   = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
+// middlewares
 app.use(express.static(__dirname + '/public')); 		// set the static files location /public/img will be /img for users
 app.use('/node_modules/angular', express.static(__dirname + '/node_modules/angular'));
 app.use('/node_modules/angular-sanitize', express.static(__dirname + '/node_modules/angular-sanitize'));
