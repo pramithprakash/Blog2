@@ -9,11 +9,11 @@
 /*--GENERAL--*/
 
 ::selection {
-        background: #ff6666; /* Safari */
+        background: #333; /* Safari */
 		color:#fff;
 }
 ::-moz-selection {
-        background: #ff6666; /* Firefox */
+        background: #333; /* Firefox */
 		color:#fff;
 }
 
@@ -30,7 +30,7 @@ body{
 }
 a{
 	text-decoration:none;
-	color:#F66;
+	color:#000;
 }
 a, a *, #page-title, #page-description, input, textarea, select, .trans{
 	transition:.35s all ease-out;
@@ -137,7 +137,7 @@ textarea{
 input[type=submit]{
 	cursor:pointer;
 	background-color:#222222;
-	color:#ff6666;
+	color:#333;
 	font-weight:bold;
 	text-transform:uppercase;
 	padding:1em 1.75em;
@@ -166,7 +166,7 @@ input[type=text], input[type=password], input[type=email]{
 input[type=text], input[type=password], input[type=email], textarea{
 }
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, textarea:focus{
-	border-color:#ff6666;
+	border-color:#333;
 }
 @media screen and (max-width:800px){
 	label{
@@ -240,8 +240,8 @@ iframe{
 /*--WRAPPER--*/
 
 div#wrapper{
-	width:96%;
-	margin:30px 2%;
+	width:100%;
+	margin:0 0%;
 	max-width:100%;
 	overflow:hidden;
 	
@@ -275,7 +275,9 @@ div#wrapper #body div.content{
 /*--HEADER--*/
 
 div#header{
-	background-color:#F66;
+	background-color:#000;
+	  background: url(http://pramithprakash.com/library/images/bg1.jpg) no-repeat 0 0;
+  background-size: cover;
 	overflow:hidden;
 	position:relative;
 }
@@ -336,8 +338,6 @@ form#search.pristine{
 }
 form#search{
 	overflow:hidden;
-	height: 0;
-	background:#D95353;
 	transition:.35s all ease-out .75s;
 	-webkit-transition:.35s all ease-out .75s;
 	-moz-transition:.35s all ease-out .75s;
@@ -348,19 +348,23 @@ form#search.show, div#header:hover + form#search, form#search:hover{
 }
 form#search .clearinput{
 	font-size:2em;
-	color:#222222;
+	color:#fff;
+	  float: right;
+  margin: 21px 16px 0 0;
 }
 form#search .clearinput.show{
 	opacity:1;
 }
 form#search input{
-	width:88%;
+	width:80%;
 	padding:1em 3% 1em;
 	margin:0;
 	font-size:1.5em;
 	font-weight:bold;
 	border:none;
-	color:#222222;
+	  border-left: 1px solid #fff;
+  margin-left: 5px;
+	color:#fff;
 }
 form#search form.selects{
 	padding:1em;
@@ -461,7 +465,7 @@ div#body div.insert{
 }
 div#body div.insert .label{
 	font-family:Courier, monospace;
-	background:#ff6666;
+	background:#333;
 	color:#ffffff;
 	position:absolute;
 	top:0;
@@ -488,7 +492,7 @@ div#body div.insert:hover{
 	background-color:#fafafa;
 }
 div#body div.insert:hover .red{
-	color:#ff6666;
+	color:#333;
 }
 div#body div.insert p:last-of-type{
 	margin-bottom:0;
@@ -656,7 +660,7 @@ div#body .post:hover div.comments-count{
 .comment .comment-reply-link{
 	cursor:pointer;
 	background-color:#222222;
-	color:#ff6666;
+	color:#333;
 	font-weight:bold;
 	text-transform:uppercase;
 	padding:1em 1.75em;
@@ -741,7 +745,7 @@ div#body div.navigation span{
 	display:none;
 }
 div#body .note{
-	border:1px dashed #ff6666;
+	border:1px dashed #333;
 	padding:2em;
 	font-style: italic;
 	font-weight:normal;
@@ -765,7 +769,7 @@ div#body .note strong{
 		background:#f0f0f0;
 	}
 	div#body div.insert .red{
-		color:#ff6666;
+		color:#333;
 	}
 	div#body div.insert .label{
 		left:0;
@@ -875,7 +879,7 @@ div#body pre.terminal{
 .browsers ul li .version{
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:2em;
-	color:#ff6666;
+	color:#333;
 }
 @media screen and (max-width:500px){
 	.browsers ul li{
@@ -899,11 +903,11 @@ div#body pre.terminal{
 /*--FOOTER--*/
 
 div#footer{
-	background-color:#F66;
+	background-color:#000;
 	overflow:hidden;
 }
 div#wrapper div#footer .content{
-	padding:5em 10em;
+	padding:5em 10em;min-height: initial;
 }
 div#footer p{
 	padding:0;
@@ -913,7 +917,7 @@ div#footer p{
 	line-height:1.25em;
 }
 div#footer p, div#footer p a{
-	color:#222222;
+	color:#ddd;
 }
 @media screen and (max-width:800px){
 	div#footer p{
@@ -923,6 +927,8 @@ div#footer p, div#footer p a{
 		padding:5em 5em;
 	}
 }
+#body,div#wrapper div#footer .content{background: #000;}
+#blog-form,#body .content{background: #fff;}
 
 /*--404--*/
 
@@ -940,7 +946,7 @@ div#no-results h2{
 	text-indent: -12px;
 }
 div#no-results h2 span{
-	color:#ff6666;
+	color:#333;
 }
 div#no-results a{
 	cursor: pointer;
@@ -981,7 +987,7 @@ textarea{
 	min-height: 123px;
 }
 button{
-  display: block;  margin: 5px 0;
+  display: block;  margin: 0 0;
     width: 100%;
   outline: 0;
   border-radius: 0;
@@ -1021,8 +1027,8 @@ button:disabled{
 }
 .la-square-spin.la-dark > div {
     color: #444;
-    background: #F66;
-    border-color: #F66;
+    background: #000;
+    border-color: #000;
 }
 .la-square-spin {
     width: 32px;
@@ -1110,12 +1116,13 @@ pre {
    color: #fff;  
 }
 .selected-tag{
-	color: #fff;
-	text-transform: uppercase;
-	background: #D95353;
-	padding: 3px 8px 3px 6px;
-	display: inline-block;
-	cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  /* background: #000; */
+  padding: 3px 8px 3px 6px;
+  display: inline-block;
+  cursor: pointer;
+  margin-left: 5px;  border-left: 1px solid #fff;
 }
 .delete-post{
 	cursor:pointer;position:absolute;right:-55px;font-size:10px;top:0;
@@ -1125,6 +1132,185 @@ pre {
 		right:0;top:-32px;
 	}
 	body{
-		background-color:#ff6666;
+		background-color:#333;
 	}
 }
+div#wrapper #body div.content h3{
+font-family: 'serif';
+  font-weight: 200;
+  font-size: 38pt;
+  line-height: 36pt;
+  letter-spacing: 1pt;
+}
+/*div#wrapper #body div.content .post,div#body div.post .excerpt{
+font-family: 'light';
+}	  
+div#body div.post .excerpt p{
+font-size: 20px;
+}*/
+@font-face {
+  font-family: 'heavy';
+  src: url('fonts/AvenirLTStd-Heavy.eot'); /* IE9 Compat Modes */
+  src: url('fonts/AvenirLTStd-Heavy.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/AvenirLTStd-Heavy.woff') format('woff'), /* Modern Browsers */
+       url('fonts/AvenirLTStd-Heavy.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/AvenirLTStd-Heavy.svg#a1eb5a5cfcec2ff7c30fe732daf3b2e8') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+
+
+@font-face {
+  font-family: 'heavy-oblique';
+  src: url('fonts/AvenirLTStd-HeavyOblique.eot'); /* IE9 Compat Modes */
+  src: url('fonts/AvenirLTStd-HeavyOblique.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/AvenirLTStd-HeavyOblique.woff') format('woff'), /* Modern Browsers */
+       url('fonts/AvenirLTStd-HeavyOblique.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/AvenirLTStd-HeavyOblique.svg#f41fefacdf302de3efb9b2c9861fc114') format('svg'); /* Legacy iOS */
+       
+  font-style:   oblique;
+  font-weight:  400;
+}
+
+
+@font-face {
+  font-family: 'light';
+  src: url('fonts/AvenirLTStd-Light.eot'); /* IE9 Compat Modes */
+  src: url('fonts/AvenirLTStd-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/AvenirLTStd-Light.woff') format('woff'), /* Modern Browsers */
+       url('fonts/AvenirLTStd-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/AvenirLTStd-Light.svg#a3894d49b0c62da6d619d8a85ab36753') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  200;
+}
+
+
+
+@font-face {
+  font-family: 'light-oblique';
+  src: url('fonts/AvenirLTStd-LightOblique.eot'); /* IE9 Compat Modes */
+  src: url('fonts/AvenirLTStd-LightOblique.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/AvenirLTStd-LightOblique.woff') format('woff'), /* Modern Browsers */
+       url('fonts/AvenirLTStd-LightOblique.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/AvenirLTStd-LightOblique.svg#f6864133f6203c14080d854a2e6ba855') format('svg'); /* Legacy iOS */
+       
+  font-style:   oblique;
+  font-weight:  200;
+}
+
+
+@font-face {
+  font-family: 'serif';
+  src: url('fonts/FreightBigLight.eot'); /* IE9 Compat Modes */
+  src: url('fonts/FreightBigLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/FreightBigLight.woff') format('woff'), /* Modern Browsers */
+       url('fonts/FreightBigLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/FreightBigLight.svg#20ccbfb081d3f70e3b34015a627bf223') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  200;
+}
+
+
+@font-face {
+  font-family: 'serif-italic';
+  src: url('fonts/FreightDispBookItalic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/FreightDispBookItalic.eot?#iefix') format('embedded-opentype'),
+       url('fonts/FreightDispBookItalic.woff') format('woff'),
+       url('fonts/FreightDispBookItalic.ttf')  format('truetype'),
+       url('fonts/FreightDispBookItalic.svg#63e6ecbfc86821cfc5e8e9141bc7ea15') format('svg'); 
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+	font-family: 'icons';
+	src:url('fonts/icons.eot?-pt48ql');
+	src:url('fonts/icons.eot?#iefix-pt48ql') format('embedded-opentype'),
+		url('fonts/icons.woff?-pt48ql') format('woff'),
+		url('fonts/icons.ttf?-pt48ql') format('truetype'),
+		url('fonts/icons.svg?-pt48ql#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	font-size: 20pt;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon-fish:before {
+	content: "\e600";
+}
+
+.icon-icon-fromage:before {
+	content: "\e601";
+}
+
+.icon-icon-meat:before {
+	content: "\e602";
+}
+
+.icon-icon-sauce:before {
+	content: "\e603";
+}
+
+.icon-icon-crabe:before {
+	content: "\e604";
+}
+
+.icon-icon-chicken:before {
+	content: "\e605";
+}
+
+.icon-icon-cerf:before {
+	content: "\e606";
+}
+
+.icon-icon-barbecue:before {
+	content: "\e607";
+}
+
+.icon-icon-duck:before {
+	content: "\e608";
+}
+@media screen and (min-width:1000px){
+	form#search .clearinput {
+  margin: 21px 11px 0 0;	
+}
+#footer{
+	position: fixed;bottom: 0;left: 0;padding: 0;
+  width: 30%;
+}
+div#header{
+	  height: 100%;
+  position: absolute;
+  width: 30%;right: 70%;
+}
+div#body{
+	height: 100%;
+  position: absolute;
+  width: 70%;  right: 0%;  overflow: scroll;
+}
+div#wrapper{
+	width: 100%;
+	margin:  0 0;
+}
+#blog-form{display: none;}
+}
+
+
+

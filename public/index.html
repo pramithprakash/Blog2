@@ -19,15 +19,15 @@
 	<div class="container" id="wrapper">
 
 	<div id="header">
-	    <div id="page-curl"></div>
 	    <div class="content">
 	        <h1 id="title-top">POST <span ng-if="blogs.length>0">{{ blogs.length }}</span> </h1>
 	        <a class="selected-tag" ng-if="tagFilter!=='ALL'" ng-click="filterTag('ALL')">{{tagFilter}} ╳</a>
 	    </div><!--CONTENT-->
-	</div><!--HEADER-->
-	<form id="search" ng-class="{ 'pristine' : searchText !== '' }">
+	    <form id="search" ng-class="{ 'pristine' : searchText !== '' }">
 		<input type="text" autocomplete="off" ng-model="searchText" placeholder="Search..." name="s" id="s"><a ng-if="searchText !== ''" ng-click="clearSearch()" class="clearinput" href="javascript:void(0);">╳</a>
 	</form>
+	</div><!--HEADER-->
+	
 	<div id="body">
 	  <div class="content">
 	  <div class="la-square-spin la-dark la-lg" ng-show="loading">
@@ -55,9 +55,7 @@
         	<a ng-click="limit = limit+3">+</a>
        	</div>
 	  </div><!--CONTENT-->
-	</div><!--BODY-->
-
-	<!-- FORM TO CREATE BLOG -->
+	  <!-- FORM TO CREATE BLOG -->
 		<div id="blog-form" class="row" >
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<form>
@@ -83,6 +81,9 @@
 	        <p><a href="#" target="_self"><strong> POST </strong></a> has been designed <strong> &amp;</strong> developed by <a href="#" target="_blank"><strong>pramithprakash</strong></a>@ pramithprakash.com &copy; 2015</p>
 	    </div><!--CONTENT-->
 	</div><!--FOOTER-->
+	</div><!--BODY-->
+
+	
 	</div>
 	</div>
 
